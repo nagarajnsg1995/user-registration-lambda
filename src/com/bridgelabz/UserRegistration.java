@@ -26,6 +26,14 @@ public class UserRegistration {
         };
         System.out.println(isValidMobileNumber.validate(".91?[6-9][0-9]{9}", "+918660768341"));
 
+        IValidation isValidEmail = (pattern, email) -> {
+            return "Email ID is " + Pattern.compile(pattern).matcher(email).matches();
+        };
+
+        System.out.println(isValidEmail.validate("^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$",
+                "nagaraja09@gmail.com"));
+
+
 
     }
 }
