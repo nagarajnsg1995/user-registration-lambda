@@ -21,6 +21,11 @@ public class UserRegistration {
         };
         System.out.println(isValidLastName.validate("^[A-Z]{1}[a-z]{2,}$", "Gaddad"));
 
+        IValidation isValidMobileNumber = (pattern, mobileNumber) -> {
+            return "Mobile number is " + Pattern.compile(pattern).matcher(mobileNumber).matches();
+        };
+        System.out.println(isValidMobileNumber.validate(".91?[6-9][0-9]{9}", "+918660768341"));
+
 
     }
 }
